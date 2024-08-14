@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    background-color: #5f27cd;/*cor de fundo do topo da pagina(cabeçalho/header)*/
+    padding: 16px 0;/*espaçamento acima(24px) e a baixo(0)*/
+    color: #fff;/*cor das letras dentro do cabeçalho/header*/
+    display: flex;/*elementos alinhados um a frente do outro*/
+    border-bottom: 16px solid #341f97;/*cor da faixa abaixo do cabeçalho/header e uma separação(solid) de itens proximos(cima e baixo*/
+    justify-content: center;/*centraliza os intens dentro do cabeçalho*/
+    text-transform: uppercase;/*deixa o "tamanho" do texto maior*/
+    font-style: italic;/*estilo de fonte usada*/
+}
+
+header button{/*este espaço afeta somente o botão dentro do header(nova imagem+)*/
+    margin-left: 16px;/*cria um espaço a esquerda(left) do botão(nova imagem)*/
+}
+
+form{
+    background-color: #c8d6e5;/*cor de fundo(background) do form/corpo da pagina*/
+    padding: 24px 0px;
+    text-align: center;/*centraliza o texto*/
+    display: none;/*o formulario não sera exibido inicialmente "none" */
+}
+
+form h2 {
+    margin-bottom: 16px;/*aumenta a margin (espaço que fica em volta) de h2*/
+}
+
+input,
+button {/* ao selecionar dois elementos separados por uma "," ambos serão afetados pelo mesmo atributo*/
+    padding: 8px;
+}
+
+button {
+    background-color: #009432;/*cor do botão*/
+    border: none;/* "border" estiliza a borda, "none" retira a borda existente*/
+    font-weight: bold;/* "font-weight" seleciona a "espessura" das letras, "bold" (negrito) deixa as letras com uma aparencia mais "grossa" */
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;/* "cursor pointer" adiciona uma "mãozinha" como um sinal de "click" ao posicionar o cursor do mouse na area desejada*/
+}
+
+#botao-cancelar {/*o "botao-cancelar esta sendo chamado com o uso de "#" em relação a clase "id", para que assim somente ele seja afetado*/
+    background-color: red;
+}
+
+ul { /* regra para o elemento "ul" responsavel pelo campo de imagens*/
+    display: flex;
+    flex-wrap: wrap; /* com o "flex-wrap" o elemntos não irão "ultrapassar o limite da tela e sim criar uma nova linha*/
+}
+
+ul li { /* regra para os intens listadados "li" dentro da "ul" */
+    max-width: 25%; /* largura maxima dos intens em uma linha */
+    list-style: none; /* o "list-slyle" esta como "none" pare que não a aparece o "pontinho" nas imagens referente ao elemento linst "li" */
+    position: relative; /*elemento pai, usado para que o elemento "position: absolute" fique comcentrado e não "vase" */
+    max-height: 180px; /*altura maxima dos intes, para que não passem do limite das imagens*/
+    overflow-y: hidden; /* usado para "cortar" a imagem, todo conteudo que ultrapassar a altura "180px" no eixo vertical "y" sera ocultado "hidden" */
+}
+
+ul li img { /* regra para as imagens "img" */
+    width: 100%; /* largura dos intens/imagens*/
+}
+
+.overlay-imagem-link { /* esta linha carrega um ponto ja que esta afetando uma classe "class" sendo esta "overlay-imagem-link" */
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7); /* a coloração rgba é aplicada para dar transparencia a cor desejada*/
+    position: absolute; /*canpo posionado no canto inferior do "li" */
+    bottom: 0; /* usado para colocar o canpo na extremidade */
+    left: 0;
+    width: 100%;
+    opacity: 0; /* removeu a barrinha de texto "opacity", nivel de opacidade "0" */
+    transition: all ease .5s; /* transição do efeito de almentar e diminuir a opacidade */
+}
+
+.overlay-imagem-link a { /* campo usado para editar a barrinha de texto (a) " ver imagem em tamanho real" */
+    color: #fff;
+    text-decoration: none; /* retirou a anderline "linha abaixo do texto" */
+}
+
+ul li:hover .overlay-imagem-link {
+    opacity: 1; /* linha que define a volta da barrinha, assim que o cursor passar pela barrinha, sua opacidade volta a ser "1" */
+}
